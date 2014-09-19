@@ -12,8 +12,8 @@ namespace Producer_Consumer
         static void Main(string[] args)
         {
             BoundedBuffer buffer = new BoundedBuffer(4);
-            Producer producer = new Producer(buffer, 10);
-            Consumer consumer = new Consumer(buffer, 10);
+            Producer producer = new Producer(buffer, 10000);
+            Consumer consumer = new Consumer(buffer, 10000);
             
             Parallel.Invoke(producer.Run, consumer.Run);
 

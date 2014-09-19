@@ -20,7 +20,12 @@ namespace Producer_Consumer
 
         public bool IsFull()
         {
-            return number.Count == Capactiy;
+            if (number.Count >= Capactiy)
+            {
+                return true;
+            }
+            return false;
+            //return number.Count == Capactiy;
         }
 
 
@@ -34,6 +39,7 @@ namespace Producer_Consumer
             }
 
             number.Enqueue(element);
+            Console.WriteLine("Producer {0} ", element);
             Monitor.PulseAll(number);
         }
 
@@ -46,6 +52,7 @@ namespace Producer_Consumer
                 Monitor.Wait(number);
             }
             int element = number.Dequeue();
+            Console.WriteLine("Consumer {0} ", element);
             Monitor.PulseAll(number);
             return element;
         }

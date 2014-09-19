@@ -22,7 +22,7 @@ namespace Producer_Consumer
             for (int i = 0; i <= HowMany; i++)
             {
                 int temp = Buffer.Take();
-                Console.WriteLine("Consumer {0} ", temp);
+                //Console.WriteLine("Consumer {0} ", temp);
             }
         }
     }

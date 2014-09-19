@@ -32,7 +32,7 @@ namespace Producer_Consumer
             for (int i = 0; i < HowMany; i++)
             {
                 Buffer.Put(i);
-                Console.WriteLine("Producer {0} ", i);
+                //Console.WriteLine("Producer {0} ", i);
             }
         }
     }
