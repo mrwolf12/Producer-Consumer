@@ -21,8 +21,8 @@ namespace Producer_Consumer
         {
             for (int i = 0; i <= HowMany; i++)
             {
-                Buffer.Take();
-                Console.WriteLine("Consumer " + i);
+                int temp = Buffer.Take();
+                Console.WriteLine("Consumer {0} ", temp);
             }
         }
     }

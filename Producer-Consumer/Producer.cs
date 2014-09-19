@@ -11,7 +11,7 @@ namespace Producer_Consumer
     {
         public BoundedBuffer Buffer { get; private set; }
         public int HowMany { get; private set; }
-        public static int LastElement = -1;
+        //public static int LastElement = -1;
 
         public Producer(BoundedBuffer buffer, int howMany)
         {
@@ -31,8 +31,8 @@ namespace Producer_Consumer
         {
             for (int i = 0; i < HowMany; i++)
             {
-                Buffer.Put(HowMany);
-                Console.WriteLine("Producer " + i);
+                Buffer.Put(i);
+                Console.WriteLine("Producer {0} ", i);
             }
         }
     }

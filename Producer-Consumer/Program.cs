@@ -15,11 +15,14 @@ namespace Producer_Consumer
             Producer producer = new Producer(buffer, 10);
             Consumer consumer = new Consumer(buffer, 10);
             
+            Parallel.Invoke(producer.Run, consumer.Run);
 
-            Thread t1 = new Thread(() => producer.Run());
-            Thread t2 = new Thread(() => consumer.Run());
-            t1.Start();
-            t2.Start();
+
+
+            //Thread t1 = new Thread(() => producer.Run());
+            //Thread t2 = new Thread(() => consumer.Run());
+            //t1.Start();
+            //t2.Start();
         }
     }
 }
